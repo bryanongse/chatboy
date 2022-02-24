@@ -1,0 +1,21 @@
+<audio autoplay hidden id="myaudio" controls>
+  <source src="../16-122828-0002.wav" type="audio/wav">
+</audio>
+
+<br /><br />
+<button onclick="toggle(this);">Hide Audio</button>
+
+<script>
+  let toggle = button => {
+     let element = document.getElementById("myaudio");
+     let hidden = element.removeAttribute("hidden");
+
+     if (hidden) {
+        element.removeAttribute("hidden");
+        button.innerText = "Hide Audio";
+     } else {
+        element.setAttribute("hidden", "hidden");
+        button.innerText = "Show Audio";
+     }
+  }
+</script>
