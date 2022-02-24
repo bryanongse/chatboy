@@ -9,8 +9,8 @@ model_name= "bhadresh-savani/distilbert-base-uncased-emotion"
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-classifier = pipeline("sentiment-analysis", model = model, tokenizer = tokenizer)
-res = classifier("Sir please calm down")
+classifier = pipeline("sentiment-analysis", model = model, tokenizer = tokenizer, return_all_scores = True)
+res = classifier("Syrup can you come down sir can you come down at this point in time served can you calm down")
 
 print(res)
 

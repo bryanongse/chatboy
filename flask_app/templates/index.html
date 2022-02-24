@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>TITLE</title>
+</head>
+<body>
+    <h1>Bryan's Trial</h1>
+
+    <p id="demo"></p>
+
+    <div class='container'>
+        <h3>Play Button</h3>
+            <form>
+                <a href=# id=play><button class='btn btn-default'>Play</button></a>
+            </form>
+
+    </div>
+</body>
+</html>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+var flag = 0;
+var score = 0;
+
+$(function() {
+  $('a#test').on('click', function(e) { // e means event
+    e.preventDefault() // stop button from redirecting
+    $.ajax({
+        type: 'GET',
+        url: '/increment',
+        data: {"name":"jonas"},
+        success: function(dataR) {
+            score;
+            document.getElementById("demo").innerHTML = score;
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    return false;
+  });
+});
+</script>
